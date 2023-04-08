@@ -1,16 +1,11 @@
-bashCopy code
 # Use the official Node.js image as the base image
 FROM node:18
 
 # Set the working directory in the container
-WORKDIR /
+WORKDIR /app
 
-# Copy the application files into the working directory
-COPY . /
-
-# Install the application dependencies
-RUN npm install express
-RUN node 1.js
+# Copy the application file into the working directory
+COPY 1.js /app
 
 # Define the entry point for the container
-CMD ["npm", "start"]
+CMD ["node", "1.js"]
